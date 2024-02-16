@@ -12,7 +12,7 @@ public class GenericTypeWitness {
 
   public static void main(String[] args) {
     GenericTypeWitness instance = new GenericTypeWitness();
-    instance.<Integer>process(input -> display(input));
+    instance.<Integer>process(GenericTypeWitness::display);
   }
 
 }
