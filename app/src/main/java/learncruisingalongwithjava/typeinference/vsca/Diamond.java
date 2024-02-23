@@ -6,6 +6,6 @@ import java.util.Map;
 
 public class Diamond {
 
-  Map<String, List<Integer>> scores = new HashMap<String, List<Integer>>();
+  Map<String, List<Integer>> scores = new HashMap<>();
 
 }
