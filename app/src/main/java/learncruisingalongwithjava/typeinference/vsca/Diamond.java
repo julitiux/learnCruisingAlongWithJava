@@ -18,4 +18,13 @@ public class Diamond {
    */
   Map<String, List<Integer>> scorez = new HashMap<>();
 
+  /**
+   * The Java 7 diamond operator had one deficiency: the object creation could not
+   * use an anonymous inner class. That restriction was removed in Java 9 and now
+   * ypu can do the following.
+   */
+  Map<String, List<Integer>> skores = new HashMap<>(){
+
+  };
+
 }
