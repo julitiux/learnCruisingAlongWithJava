@@ -20,6 +20,11 @@ public class Lambda {
      */
     numbers.forEach((number) -> System.out.println(number * 2));
 
+    /**
+     * the compiler quickly rewards us for gesture of trust and allows us to drop the parenthesis
+     * if the parameter list has only one parameter
+     */
+    numbers.forEach(number -> System.out.println(number * 2));
   }
 
 }
