@@ -22,6 +22,13 @@ public class LambdaTypeInferenceFall {
      */
     languages.stream()
       .sorted(comparing(name -> name.length()).reversed());
+
+    /**
+     * it looks to where the result of comparing() goes to, and it finds Stream<String>.sorted(Comparator<T>)
+     * and determines that T should be String in this situation
+     */
+    languages.stream()
+      .sorted(comparing(name -> name.length()));
   }
 
 }
