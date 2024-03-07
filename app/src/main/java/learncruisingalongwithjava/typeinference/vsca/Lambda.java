@@ -25,6 +25,14 @@ public class Lambda {
      * if the parameter list has only one parameter
      */
     numbers.forEach(number -> System.out.println(number * 2));
+
+    /**
+     * illegal start of expression
+     * In Java 8,9, and 10. if you wanted to specify any annotationson a lambda expressions parameters
+     * ypu have to also specify the type.
+     */
+    numbers.forEach((@NotNull var number) -> System.out.println(number * 2)); // ERROR
+
   }
 
 }
