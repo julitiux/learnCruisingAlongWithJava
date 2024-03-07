@@ -31,8 +31,13 @@ public class Lambda {
      * In Java 8,9, and 10. if you wanted to specify any annotationson a lambda expressions parameters
      * ypu have to also specify the type.
      */
-    numbers.forEach((@NotNull var number) -> System.out.println(number * 2)); // ERROR
+    numbers.forEach((@NotNull number) -> System.out.println(number * 2)); // ERROR
 
+    /**
+     * if you plane to use 'var' for type inference of a lambda expression paramater, then
+     * you have to use it for all the parameters of that lambda expresion.
+     */
+    numbers.forEach((@NotNull var number) -> System.out.println(number * 2));
   }
 
 }
