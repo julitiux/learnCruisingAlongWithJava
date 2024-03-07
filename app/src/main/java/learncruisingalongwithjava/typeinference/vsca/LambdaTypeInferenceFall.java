@@ -14,8 +14,14 @@ public class LambdaTypeInferenceFall {
      * we used type inference for the parameter of the lambda expression passer to the comparing() method
      */
     languages.stream()
-      .sorted(comparing( name -> name.length() ))
+      .sorted(comparing(name -> name.length()))
       .forEach(System.out::println);
+
+    /**
+     * ERROR: cannot find the symbol length() on variable name of type Object
+     */
+    languages.stream()
+      .sorted(comparing(name -> name.length()).reversed());
   }
 
 }
