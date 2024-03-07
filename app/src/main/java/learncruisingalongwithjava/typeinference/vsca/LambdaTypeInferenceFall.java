@@ -29,6 +29,14 @@ public class LambdaTypeInferenceFall {
      */
     languages.stream()
       .sorted(comparing(name -> name.length()));
+
+    /**
+     * this is a reasonable approach if the lambda cannot be replaced by a method reference.
+     * If the lambda does not to much with the paramter and merely passes it through to another
+     * function
+     */
+    languages.stream()
+      .sorted(comparing((String name) -> name.length()).reversed());
   }
 
 }
