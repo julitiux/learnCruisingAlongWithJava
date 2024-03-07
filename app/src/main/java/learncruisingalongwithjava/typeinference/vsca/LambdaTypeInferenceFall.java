@@ -37,6 +37,13 @@ public class LambdaTypeInferenceFall {
      */
     languages.stream()
       .sorted(comparing((String name) -> name.length()).reversed());
+
+    /**
+     * the method reference gives enough context to the compiler to realize that we are talking about a String and
+     * not a Object, and it rides forward with that information
+     */
+    languages.stream()
+      .sorted(comparing(String::length).reversed());
   }
 
 }
