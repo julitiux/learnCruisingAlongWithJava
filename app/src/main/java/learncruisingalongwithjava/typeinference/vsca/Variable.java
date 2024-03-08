@@ -11,6 +11,9 @@ public class Variable {
 
     // consider the following
     HashMap<String, List<Integer>> scores = new HashMap<String, List<Integer>>();
+
+    // we can us type inference and make that line crisp
+    var score = new HashMap<String, List<Integer>>();
   }
 
 }
