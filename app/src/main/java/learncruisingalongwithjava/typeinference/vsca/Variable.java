@@ -2,6 +2,9 @@ package learncruisingalongwithjava.typeinference.vsca;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static java.util.stream.Collectors.*;
 
 public class Variable {
 
@@ -18,6 +21,23 @@ public class Variable {
     // the type variable numberCores is inferred as int based return type of the
     // availableProcessors() methods return type.
     var numberOfCores = Runtime.getRuntime().availableProcessors();
+  }
+
+  public static void refactoring() {
+    List<String> languages = List.of("C++", "C", "Erlang", "Elm", "Haskell", "Ruby", "Python");
+    List<String> jvmLanguages = List.of("Java", "Kotlin", "Scala", "Groovy", "Clojure", "JRuby");
+
+    Map<Integer, List<String>> namesByLength = languages.stream()
+      .collect(
+        groupingBy((String name) -> name.length(),
+          mapping((String name) -> name.toUpperCase(),
+            toList())));
+
+    Map<Integer, List<String>> jvmNamesByLength = jvmLanguages.stream()
+      .collect(
+        groupingBy((String name) -> name.length(),
+          mapping((String name) -> name.toUpperCase(),
+            toList())));
   }
 
 }
