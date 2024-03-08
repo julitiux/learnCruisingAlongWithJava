@@ -14,6 +14,10 @@ public class Variable {
 
     // we can us type inference and make that line crisp
     var score = new HashMap<String, List<Integer>>();
+
+    // the type variable numberCores is inferred as int based return type of the
+    // availableProcessors() methods return type.
+    var numberOfCores = Runtime.getRuntime().availableProcessors();
   }
 
 }
