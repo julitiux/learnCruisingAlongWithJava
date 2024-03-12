@@ -3,6 +3,7 @@ package learncruisingalongwithjava.typeinference.vsca;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
 
 import static java.util.stream.Collectors.*;
 
@@ -38,6 +39,21 @@ public class Variable {
         groupingBy((String name) -> name.length(),
           mapping((String name) -> name.toUpperCase(),
             toList())));
+
+    /**
+     * MAKING REFACTOR
+     */
+
+    Collector<String, ?, Map<Integer, List<String>>> groupingCriteria =
+      groupingBy((String name) -> name.length(),
+        mapping((String name) -> name.toUpperCase(), toList()));
+
+    Map<Integer, List<String>> namesByLengthRefactor = languages.stream()
+      .collect(groupingCriteria);
+
+    Map<Integer, List<String>> jvmNamesByLengthRefactor = jvmLanguages.stream()
+      .collect(groupingCriteria);
+
   }
 
 }
