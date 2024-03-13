@@ -54,6 +54,16 @@ public class Variable {
     Map<Integer, List<String>> jvmNamesByLengthRefactor = jvmLanguages.stream()
       .collect(groupingCriteria);
 
+    var groupingCriteriaVar =
+      groupingBy((String name) -> name.length(),
+        mapping((String name) -> name.toUpperCase(), toList()));
+
+    var namesByLengthRefactorVar = languages.stream()
+      .collect(groupingCriteria);
+
+    var jvmNamesByLengthRefactorVar = jvmLanguages.stream()
+      .collect(groupingCriteria);
+
   }
 
 }
